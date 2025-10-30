@@ -31,10 +31,10 @@ def refine_prompt(user_prompt: str, app_type: str) -> str:
     # Send request to the GPT OSS model hosted via LiteLLM
     try:
         response = litellm.completion(
-            model="hosted_vllm/openai/gpt-oss-20b",
-            api_base="http://198.145.126.231:8002/v1",
+            model=os.getenv("VLLM_MODEL"),
+            api_base=os.getenv("VLLM_HOST_API"),
             temperature=0.7,
-            max_tokens=256,
+            max_tokens=512,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {
