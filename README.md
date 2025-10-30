@@ -80,6 +80,18 @@ _Optimize your prompts for image generation and editing with AI-powered refineme
 ![Image Editing Refinement](.github/assets/image_1.png)
 ![Image Generation Refinement](.github/assets/image_2.png)
 
+### Real Usage Test
+
+> User Prompt - "White male early 30's blue eyes brown hair and dimples, geek nerd tattoo all over his arms. Jim halpert, bo burnham feel, 90's cartoon animation"
+
+> Output
+![alt text](.github/assets/image_3.png)
+
+> Our Refined Prompt - "White male early 30s, blue eyes, brown hair, dimples, geeky nerd look, full sleeve tattoos on arms, Jim Halpert vibe, Bo Burnham comedic presence, in 1990s cartoon animation style, vibrant colors, highly detailed, expressive face, dynamic pose, studio quality."
+
+> Output
+![alt text](.github/assets/image_4.png)
+
 ## 🛠 Tech Stack
 
 | Component                  | Technology         |
