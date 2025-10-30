@@ -19,10 +19,6 @@ class PromptRequest(BaseModel):
     user_prompt: str = Field(
         ..., description="The user's raw input prompt", min_length=1
     )
-    app_type: Literal["image_gen", "image_edit"] = Field(
-        ...,
-        description="The type of app - 'image_gen' for image generation or 'image_edit' for image editing",
-    )
 
 
 class PromptResponse(BaseModel):
@@ -54,12 +50,11 @@ async def refine_prompt_endpoint(request: PromptRequest):
     Refine a user prompt for image generation or editing.
 
     - **user_prompt**: The raw user input prompt to be refined
-    - **app_type**: Either 'image_gen' for Stable Diffusion 3.5 or 'image_edit' for Qwen Image Edit
 
     Returns the refined prompt optimized for the selected model.
     """
     try:
-        refined = refine_prompt(request.user_prompt, request.app_type)
+        refined = refine_prompt(request.user_prompt)
 
         # Additional safety check
         if not refined or refined.strip() == "":

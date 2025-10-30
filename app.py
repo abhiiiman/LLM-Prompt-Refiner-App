@@ -99,16 +99,6 @@ col1, col2 = st.columns([2, 1])
 with col1:
     st.subheader("📝 Your Prompt")
 
-with col2:
-    app_type = st.selectbox(
-        "App Type",
-        options=["image_gen", "image_edit"],
-        format_func=lambda x: (
-            "🖼️ Image Generation" if x == "image_gen" else "✏️ Image Editing"
-        ),
-        help="Select the type of model you're using",
-    )
-
 # Text area for user prompt
 user_prompt = st.text_area(
     "Enter your prompt below:",
@@ -134,7 +124,7 @@ if refine_button:
                 # Make API request
                 response = requests.post(
                     f"{api_url}/refine",
-                    json={"user_prompt": user_prompt, "app_type": app_type},
+                    json={"user_prompt": user_prompt},
                     timeout=30,
                 )
 
